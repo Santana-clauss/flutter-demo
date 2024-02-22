@@ -5,7 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_1/config/const.dart';
 import 'package:project_1/controllers/homecontroller.dart';
+import 'package:project_1/views/calculator.dart';
+import 'package:project_1/views/studentlist.dart';
+
 HomeController homeController=Get.put(HomeController());
+var screens=[
+  Calculator(),
+  Calculator(),
+  Students(),
+  Calculator(),
+];
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -26,6 +35,14 @@ class Home extends StatelessWidget {
       onTap: (index){
         homeController.updateSelectedPage(index);
       },) ,
+      body: Obx(()=>Center(
+          child: screens[homeController.selectedPage.value]),
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+
+      },
+      child: Icon(Icons.add),
+      ),
     );
   }
 }

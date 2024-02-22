@@ -16,12 +16,7 @@ class Calculator extends StatelessWidget {
       CalculatorController calculatorController=Get.put(CalculatorController());
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        foregroundColor: primaryColor,
-      ),
-      body: Padding(
+    return   Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(children: [
           customTextField(userFieldController: nameController),
@@ -46,7 +41,7 @@ class Calculator extends StatelessWidget {
           SizedBox( height: 10,),
           Obx(()=>customText(label:"Hello ${calculatorController.name} the sum of ${calculatorController.a} and ${calculatorController.b} is ${calculatorController.sum}")),
         ],),
-      ),
+      
     );
   }
 }
