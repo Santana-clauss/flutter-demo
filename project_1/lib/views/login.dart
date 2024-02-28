@@ -1,19 +1,24 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_1/config/const.dart';
+import 'package:project_1/utils/preferences.dart';
 import 'package:project_1/views/customButton.dart';
 import 'package:project_1/views/customText.dart';
 import 'package:project_1/views/customTextField.dart';
-
+TextEditingController userNameController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+preferences myPref=preferences();
 class login extends StatelessWidget {
   const login({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController userNameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
+    myPref.getValue("username").then((value) => {
+      userNameController.text=value
+    });
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text(" My App"),
@@ -127,6 +132,7 @@ class login extends StatelessWidget {
   }
 
   void gotoLogin() {
+    myPref.setValue("username",userNameController.text);
     Get.offAllNamed("/home");
   }
 }

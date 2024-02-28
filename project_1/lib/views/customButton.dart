@@ -25,10 +25,10 @@ class customButton extends StatelessWidget {
           labelColor: appWhiteColor,
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.green.shade900,
+         backgroundColor: Colors.green.shade900,
           elevation: 10,
           padding: const EdgeInsets.all(20),
-          //shadowColor: primaryColor,
+          shadowColor: primaryColor,
         
 
         ),
