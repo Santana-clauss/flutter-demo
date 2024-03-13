@@ -10,7 +10,7 @@ class MyDatabase{
         onCreate: (Database db, int version) async {
       // When creating the db, create the table
       await db.execute(
-          'CREATE TABLE Test (id INTEGER PRIMARY KEY, name TEXT)');
+          'CREATE TABLE Test (id INTEGER , name TEXT)');
     });
   }
   writeRec(int id, String name) async {

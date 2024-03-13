@@ -4,13 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_1/utils/routes.dart';
-
-import 'package:project_1/views/pages/loginpage.dart';
 void main() {
   runApp(GetMaterialApp(
    //home: LoginPage(),
   initialRoute: "/login",
-   debugShowCheckedModeBanner: false,
+  debugShowCheckedModeBanner: false,
   getPages: Routes.routes,
   ));
 }
